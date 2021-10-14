@@ -4,7 +4,7 @@ const URL = 'http://localhost:7890';
 
 
 export async function searchBooks(query) {
-  const { results } = await request.get(`${URL}/search?q=${query}`);
+  const { body } = await request.get(`${URL}/search?q=${query}`);
 
-  return results;
+  return body;
 }

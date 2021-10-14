@@ -7,11 +7,12 @@ export default class Search extends Component {
       search: ''
     }
 
-   // componentDidMount = async() => 
+   
 
    handleSubmit = async e => {
      e.preventDefault();
      const books = await searchBooks(this.state.search);
+     console.log(books);
      this.setState({ books: books });
    }
 
@@ -21,7 +22,7 @@ export default class Search extends Component {
      return (
        <div>
          <form onSubmit={this.handleSubmit}>
-           <label>Search Best Sellers:<input className='searchbox' onChange={e => this.setState({ search: e.target.value })}/></label>
+           <label>Search Best Sellers:<input className='searchbox' value={this.state.search} onChange={e => this.setState({ search: e.target.value })}/></label>
            <button>Search</button>
          </form>
        </div>
