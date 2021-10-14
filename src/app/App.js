@@ -6,39 +6,28 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect
+  NavLink
 } from 'react-router-dom';
+import Search from '../Search';
 import './App.css';
 
-class App extends Component {
+export default class App extends Component {
 
   render() {
     return (
       <div className="App">
         <Router>
-          <Header/>
+          <header>
+            <NavLink exact activeClassName='active-link' to="/">Search</NavLink>
+          </header>
           <main>
 
             <Switch>
               <Route path="/" exact={true}
                 render={routerProps => (
-                  <Home {...routerProps}/>
+                  <Search {...routerProps}/>
                 )}
               />
-
-              <Route path="/resources" exact={true}
-                render={routerProps => (
-                  <div>Implement a page of resources</div>
-                )}
-              />
-
-              <Route path="/resources/:id"
-                render={routerProps => (
-                  <div>Implement a page for id {routerProps.match.params.id}</div>
-                )}
-              />
-
-              <Redirect to="/" />
 
             </Switch>
           </main>
@@ -50,4 +39,3 @@ class App extends Component {
 
 }
 
-export default App;
