@@ -1,10 +1,34 @@
 .App {
   height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
 }
 
 main {
-  background: #FAF0EA;
+  background: black;
+  color:antiquewhite;
 }
 
+.bookPage{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.bookDesc{
+  border: 1px solid grey; 
+  margin: 10px; 
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 200px;
+  padding: 10px;
+}
+
+.bookDesc div:nth-child(2){
+  font-size: .8rem;
+}
+
+.bookDesc div:nth-child(1){
+  font-size: .8rem;
+  color:aquamarine;
+  margin-bottom: 10px;
+}
