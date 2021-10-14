@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { searchBooks } from './fetch-utils';
-import { SuperAgent } from 'superagent';
+// import { SuperAgent } from 'superagent';
 
 
 export default class Search extends Component {
@@ -9,8 +9,6 @@ export default class Search extends Component {
       search: ''
     }
 
-   
-
    handleSubmit = async e => {
      e.preventDefault();
      const books = await searchBooks(this.state.search);
@@ -18,9 +16,7 @@ export default class Search extends Component {
      this.setState({ books: books });
    }
 
-   
    render() {
-     console.log(this.state);
      return (
        <>
          <form onSubmit={this.handleSubmit}>
